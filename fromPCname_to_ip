@@ -1,0 +1,1 @@
+Get-Content 'C:\путь\к\списку_имен.txt' | ForEach-Object { [System.Net.Dns]::GetHostAddresses($_) } | Out-File 'C:\путь\к\результатам.txt
