@@ -1,0 +1,8 @@
+$domain = "DC=abo,DC=lmn,DC=proto,DC=local"
+$searcher = New-Object DirectoryServices.DirectorySearcher([ADSI]"LDAP://$domain")
+$searcher.Filter = "(objectClass=user)"
+
+
+$searcher.FindAll() | ForEach-Object {
+    $_.Properties
+}
