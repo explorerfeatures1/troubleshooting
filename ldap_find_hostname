@@ -1,0 +1,12 @@
+$searcher = New-Object System.DirectoryServices.DirectorySearcher([ADSI]"")
+$searcher.Filter
+=
+"(objectClass=computer)"
+#
+Все компbютеры
+Scomputers = $searcher.FindAll()
+foreach (Scomputer in $computers) {
+$name = $computer.Properties.name[0]
+$lastLogon = if ($computer.Properties.lastlogon) { [datetime]::FromFileTime($computer.Proper
+ties.lastlogon[0]) } else { Snull }
+Write-Host "Computer: $name, Last Logon: $lastLogon
