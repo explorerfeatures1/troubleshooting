@@ -1,0 +1,6 @@
+$searcher = New-Object DirectoryServices.DirectorySearcher
+$searcher.Filter = "(&(objectCategory=computer)(userAccountControl:1.2.840.113556.1.4.803:=524288))"
+$searcher.FindAll() | ForEach-Object { $_.Properties }
+
+
+###userAccountControl:1.2.840.113556.1.4.803:=524288 — флаг TRUSTED_FOR_DELEGATION
