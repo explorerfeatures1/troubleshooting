@@ -1,0 +1,9 @@
+#You need admin rights
+PS C:\Users\x\RiskySPN> Get-ExecutionPolicy
+ Restricted
+PS C:\Users\x\RiskySPN> Set-ExecutionPolicy Bypass -Scope Process -Force
+
+PS C:\Users\x\RiskySPN> Get-ExecutionPolicy
+Get-ExecutionPolicy Bypass
+
+PS C:\Users\x\RiskySPN> Set-ExecutionPolicy RemoteSigned -Scope CurrentUser -Force
