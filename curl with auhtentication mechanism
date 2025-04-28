@@ -1,0 +1,3 @@
+how to make curl request if you know creds on the site 
+
+curl -I -v -u "user:passsword" https://example.com -ssl-no-revoke
