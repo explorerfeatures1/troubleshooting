@@ -6,3 +6,7 @@ $searcher.Filter = "(objectClass=user)"
 $searcher.FindAll() | ForEach-Object {
     $_.Properties
 }
+
+
+также
+.\ldapsearch-ad.py -l DC-IP -d Domain_name -u username -p password -t all
