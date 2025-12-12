@@ -1,0 +1,4 @@
+ssh -o MACs=hmac-sha2-256,hmac-sha2-512,hmac-sha1 username@10.10.10.10
+
+копирование файла на удаленный хост
+scp -o MACs=hmac-sha2-256,hmac-sha2-512,hmac-sha1 scanner-signed-rpm.run Example@@10.10.10.10:/home/User/Desktop
