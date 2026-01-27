@@ -1,0 +1,7 @@
+
+
+kali работает на cloudflare весь трафик в россии блочится
+
+зеркало https://http.kali.org/README?mirrorlist -> CTL+F ищем ru
+echo "deb https://mirror.truenetwork.ru/kali/ kali-last-snapshot main contrib non-free non-free-firmware" | sudo tee /etc/apt/sources.list
+sudo apt update
