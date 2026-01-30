@@ -1,0 +1,11 @@
+└─$ docker compose up --build
+[+] up 2/2
+ ! Image mongo:5     Interrupted                                                                                          15.0s
+ ✘ Image postgres:13 Error Get "https://registry-1.docker.io/v2/": net/http: request canceled while waiting for ...       15.0s
+Error response from daemon: Get "https://registry-1.docker.io/v2/": net/http: request canceled while waiting for connection (Client.Timeout exceeded while awaiting headers)
+
+
+  в файле docker-compose.yml и Dockerfile прописываем путь к зеркалу docker hub в строках image: dockerhub.timeweb.cloud/library/postgres:13   (пример)
+
+   docker compose up --build
+                                               
